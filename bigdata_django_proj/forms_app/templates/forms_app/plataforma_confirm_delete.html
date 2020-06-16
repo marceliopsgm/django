@@ -1,0 +1,13 @@
+{% extends "forms_app/forms_app_base.html" %}
+
+{% block body_block %}
+  <!-- <h1>Delete {{plataforma.name}}?</h1> -->
+  <h1>Delete?</h1>
+    <form method="post">
+      {% csrf_token %}
+      <!-- <a href="{% url 'forms_app:detail' pk=school.pk %}">Cancel</a> -->
+      <!-- <input type="submit" class="btn btn-success" name="" value="Cancel" href="{% url 'forms_app:detail' pk=plataforma.pk %}"> -->
+      <!-- <input type="submit" class="btn btn-danger" name="" value="delete"> -->
+      <p>teste delete</p>
+    </form>
+{% endblock body_block %}

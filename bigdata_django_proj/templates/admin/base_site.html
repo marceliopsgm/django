@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+  <!-- <img src="https://www.b2wmarketplace.com.br/v3/assets/images/logos/logo-mktp-white.png"> -->
+  <h1 id="site-name"><a href="{% url 'admin:index' %}"><strong style="color:white;">Admin</strong></a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

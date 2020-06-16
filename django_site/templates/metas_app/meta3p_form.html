@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card border-secondary mb-3">
+  <div class="card-header"><h1>Metas 3P</h1></div>
+  <div class="card-body text-secondary">
+    <p class="card-text">Brands: Americanas.com, Submarino, Shoptime and Sou Barato.</p>
+     <a class="btn btn-success" href="{% url '3p_upload' %}">Upload CSV</a>
+  </div>
+</div>
+
+{% endblock %}

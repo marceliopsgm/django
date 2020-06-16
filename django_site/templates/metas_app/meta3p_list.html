@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card border-secondary mb-3">
+  <div class="card-header"><h1>Metas 3P</h1></div>
+  <div class="card-body text-secondary">
+    <p class="card-text">Brands: Americanas.com, Submarino, Shoptime and Sou Barato.</p>
+      <hr class="my-4">
+     <a class="btn btn-link" href="{% url '3p_upload' %}">Upload files</a>
+  </div>
+</div>
+
+<!--  <div class="container">-->
+<!--    <table class="table table-hover">-->
+<!--      <thead>-->
+<!--        <tr>-->
+<!--          <th scope="col">#</th>-->
+<!--          <th scope="col">Marca</th>-->
+<!--          <th scope="col">Cód. Depto.</th>-->
+<!--          <th scope="col">Depto.</th>-->
+<!--          <th scope="col">Cód. Sub. Depto.</th>-->
+<!--          <th scope="col">Ponto Venda</th>-->
+<!--          <th scope="col">Alcance TV Shop</th>-->
+<!--          <th scope="col">Data</th>-->
+<!--          <th scope="col">Val. Calc.</th>-->
+<!--          <th scope="col">Val. Calc. Alcance Shop</th>-->
+<!--          <th scope="col">Data Update</th>-->
+<!--          <th scope="col">Dia</th>-->
+<!--          <th scope="col">Val. Calc. Mesmas Lj</th>-->
+<!--          <th scope="col">Val. Calc. Mesmas Lj Shop</th>-->
+<!--          <th scope="col">Val. Calc. Novas Lj</th>-->
+<!--          <th scope="col">Val. Calc. Novas Lj Shop</th>-->
+<!--        </tr>-->
+<!--      </thead>-->
+
+<!--    <tbody>-->
+<!--      {% for meta in ctx_meta3p %}-->
+<!--      <tr>-->
+<!--        <td>{{meta.pk}}</td>-->
+<!--        <td>{{meta.marca}}</td>-->
+<!--        <td>{{meta.cod_departamento}}</td>-->
+<!--        <td>{{meta.departamento}}</td>-->
+<!--        <td>{{meta.cod_subdepartamento}}</td>-->
+<!--        <td>{{meta.ponto_venda}}</td>-->
+<!--        <td>{{meta.alcance_tv_shop}}</td>-->
+<!--        <td>{{meta.data}}</td>-->
+<!--        <td>{{meta.valor_calculado}}</td>-->
+<!--        <td>{{meta.valor_calc_alcance_shop}}</td>-->
+<!--        <td>{{meta.data_update}}</td>-->
+<!--        <td>{{meta.val_calc_mesmas_lojas}}</td>-->
+<!--        <td>{{meta.val_calc_alcance_mesmas_lojas_shop}}</td>-->
+<!--        <td>{{meta.val_calc_novas_lojas}}</td>-->
+<!--        <td>{{meta.val_calc_alcance_novas_lojas_shop}}</td>-->
+<!--      </tr>-->
+<!--      {% endfor %}-->
+<!--    </tbody>-->
+<!--    </table>-->
+<!--  </div>-->
+
+{% endblock %}

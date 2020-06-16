@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <script>
+        function validateForm() {
+          var x = document.forms["myForm"]["3p_csv_file"].value;
+          if (x == "" || x == null || !x.includes(".csv")) {
+            alert("Please select a CSV file");
+            return false;
+          }
+        }
+
+    </script>
+
+    <div class="card border-secondary mb-3">
+      <div class="card-header"><h1>Upload 3P</h1></div>
+      <div class="card-body text-secondary">
+        <h5 class="card-title">Upload your CSV File</h5>
+          <hr class="my-4">
+        <p class="card-text">Brands: Americanas.com, Submarino, Shoptime and Sou Barato</p>
+
+          <form name="myForm" action="." onsubmit="return validateForm(this)" method="post" required enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" class="file-path validate" name="3p_csv_file">
+            <button type="submit" class="btn btn-primary" >Upload file</button>
+        </form>
+      </div>
+    </div>
+
+    {% if status %}
+        <div class="alert alert-primary role="alert">
+          <p><a href="{{ status }}"></a> {{ status }}</p>
+        </div>
+    {% endif %}
+
+    {% if message %}
+        <div class="alert alert-primary" role="alert">
+          <p><a href="{{ message }}"></a> {{ message }}</p>
+        </div>
+    {% endif %}
+
+    {% if expected %}
+        <div class="alert alert-primary" role="alert">
+          <p><a href="{{ expected_fields }}"></a> {{ expected }}</p>
+        </div>
+    {% endif %}
+
+{% endblock %}

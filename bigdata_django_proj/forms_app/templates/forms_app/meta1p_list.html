@@ -1,0 +1,54 @@
+{% extends "forms_app/forms_app_base.html" %}
+
+{% block body_block %}
+
+  <div class="jumbotron">
+      <h1>Metas 1P</h1>
+      <p>Metas para vendas efetuadas pelas marcas B2W: Americanas.com, Submarino e Sou Barato.</p>
+<!--      <a class="btn btn-outline-dark" href="/forms_app/1p_create">Cadastrar Form</a>-->
+      <a class="btn btn-outline-dark" href="/forms_app/1p_upload">Upload CSV</a>
+  </div>
+
+  <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Cód. Depto.</th>
+          <th scope="col">Cód Sub. Depto.</th>
+          <th scope="col">Cód. Segmento</th>
+          <th scope="col">Cód. Marca Própria</th>
+          <th scope="col">Alcance TV Shop</th>
+          <th scope="col">Disp. Origem</th>
+          <th scope="col">Unid. Negócio</th>
+          <th scope="col">Dia</th>
+          <th scope="col">Valor Calculado</th>
+          <th scope="col">Valor Calc. Alcance Shop</th>
+          <th scope="col">% Meta Orçada</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      {% for meta in ctx_meta1p %}
+      <tr>
+        <td>{{meta.pk}}</td>
+        <td>{{meta.marca}}</td>
+        <td>{{meta.cod_departamento}}</td>
+        <td>{{meta.cod_subdepartamento}}</td>
+        <td>{{meta.cod_segmento}}</td>
+        <td>{{meta.cod_marca_propria}}</td>
+        <td>{{meta.alcance_tv_shop}}</td>
+        <td>{{meta.cod_dispositivo_origem}}</td>
+        <td>{{meta.cod_unidade_negocio}}</td>
+        <td>{{meta.dia}}</td>
+        <td>{{meta.valor_calculado}}</td>
+        <td>{{meta.valor_calc_alcance_shop}}</td>
+        <td>{{meta.percentual_margem_orcada}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bfac6b56-7e4b-4f52-9796-b566e7f6b27a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cSQsr3ykLBQTefgO2yUVPxwdeb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/django_site/templates/metas_app" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/django_site/templates/metas_app" />
+      <recent name="$PROJECT_DIR$/bigdata_django_proj/forms_app/templates/forms_app" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bigdata_django_proj" />
+      <recent name="$PROJECT_DIR$/django_site/metas_app" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bfac6b56-7e4b-4f52-9796-b566e7f6b27a" name="Default Changelist" comment="" />
+      <created>1590519723366</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590519723366</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="641" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1590591764788">
+      <screen x="51" y="27" width="1869" height="1053" />
+    </state>
+    <state x="641" y="380" key="com.intellij.ide.util.TipDialog/51.27.1869.1053@51.27.1869.1053" timestamp="1590591764788" />
+    <state x="633" y="161" width="704" height="783" key="find.popup" timestamp="1591376337957">
+      <screen x="51" y="27" width="1869" height="1053" />
+    </state>
+    <state x="633" y="161" width="704" height="783" key="find.popup/51.27.1869.1053@51.27.1869.1053" timestamp="1591376337957" />
+    <state x="649" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1591288279884">
+      <screen x="51" y="27" width="1869" height="1053" />
+    </state>
+    <state x="649" y="198" width="672" height="676" key="search.everywhere.popup/51.27.1869.1053@51.27.1869.1053" timestamp="1591288279884" />
+  </component>
+</project>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="card border-secondary mb-3">
+  <div class="card-header"><h1>Metas</h1></div>
+  <div class="card-body text-secondary">
+     <p>{% if user.is_authenticated %} Welcome {{ user.username }}{%endif%}</p>
+      <hr class="my-4">
+     <p class="card-text"> ... </p>
+     <p class="card-text"> ... </p>
+     <p class="card-text"> ... </p>
+
+  </div>
+</div>
+
+<!--    <h2>Home Page</h2>-->
+<!--    <p>{% if user.is_authenticated %} Welcome {{ user.username }}{%endif%}</p>-->
+{% endblock %}
