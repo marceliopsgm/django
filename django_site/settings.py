@@ -25,7 +25,7 @@ SECRET_KEY = '+m*j&-p#ok(g3wn_+4bzq6hx(xp$st+k8#llvf(ws(-lflk*tw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_site.metas_app',
     'crispy_forms',
-    'storages',
+    # 'storages',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -131,14 +131,14 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-# Azure
-DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
-STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
+# # Azure
+# DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
+# STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
 
-STATIC_LOCATION = "static"
-MEDIA_LOCATION = "media"
+# STATIC_LOCATION = "static"
+# MEDIA_LOCATION = "media"
 
-AZURE_ACCOUNT_NAME = "b2wdjangoaccountstorage"
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+# AZURE_ACCOUNT_NAME = "b2wdjangoaccountstorage"
+# AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+# STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+# MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'

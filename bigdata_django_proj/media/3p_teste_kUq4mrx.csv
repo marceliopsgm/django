@@ -1,5 +1,0 @@
-marca,cod_departamento,departamento,cod_subdepartamento,ponto_venda,alcance_tv_shop,data,valor_calculado,valor_calc_alcance_shop,data_update,val_calc_mesmas_lojas,val_calc_alcance_mesmas_lojas_shop,val_calc_novas_lojas,val_calc_alcance_novas_lojas_shop
-ACOM,18,TELEFONIA (18),-1,INTERNET,,2020-05-01, 2679258.98 ,,2020-04-30, 1339629.49 ,, 1339629.49 ,
-ACOM,9067,CLIMATIZAÇÃO (9067),-1,INTERNET,,2020-05-01, 693831.92 ,,2020-04-30, 527031.79 ,, 166800.12 ,
-SHOP,11,AUTOMOTIVO (11),-1,,,2020-05-01,1700.06,,, 1307.12 ,,393,
-SHOP,11,AUTOMOTIVO (11),bla,,,2020-05-02,1757.51,,, 1351.29 ,,406,
