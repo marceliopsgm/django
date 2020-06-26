@@ -28,7 +28,7 @@ class Meta1P(models.Model):
     def get_absolute_url(self):
         return reverse("metas_app:1p_list")
 
-class  Meta3P(models.Model):
+class Meta3P(models.Model):
     marca = models.CharField(max_length=256)
     cod_departamento = models.PositiveIntegerField()
     departamento = models.CharField(max_length=256)

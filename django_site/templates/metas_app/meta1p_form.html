@@ -1,26 +1,22 @@
-{% extends "base.html" %}
+{% extend
+4 	SHOP 	15 	-1 	9719 	-1 	N 	3 	991 	Feb. 5, 2019 	1136.64 	0.00 	0.30s "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+<div class="card border-secondary mb-3">
+  <div class="card-header"><h1>Metas 1P</h1></div>
+  <div class="card-body text-secondary">
+    <p class="card-text">Brands: Americanas.com, Submarino and Sou Barato.</p>
+      <hr class="my-4">
+  </div>
 
-<div class="jumbotron">
-    <h1>Metas 1P</h1>
-    <p>Cadastrar metas da Americanas.com, Submarino, Shoptime ou Soubarato.</p>
-</div>
-<!--<div class="">-->
-<!--  <h1>-->
-<!--    {% if not form.instance.pk %}-->
-<!--      <p>Criar Meta 1P</p>-->
-<!--    {% else %}-->
-<!--      <p>Atualizar Meta 1P</p>-->
-<!--    {% endif %}-->
-<!--  </h1>-->
-<!--</div>-->
-<div class="container">
-    <form class="" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" class="btn btn-outline-dark" name="" value="Cadastrar">
-      </form>
+  <div class="container">
+    <form action="" method="post" autocomplete="on">
+        {% csrf_token %}
+        {{form_1p|crispy}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </p>
     </form>
   </div>
+</div>
 {% endblock%}

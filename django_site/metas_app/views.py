@@ -34,41 +34,10 @@ def signup(request):
         'form': form
     })
 
+
 ################################################################
 ###### 1P
 ################################################################
-
-class Meta1PListView(ListView):
-    context_object_name = 'ctx_meta1p'
-    model = models.Meta1P
-    # template_name = 'metas_app/meta1p_list.html'
-#
-# class Meta1PDetailView(DetailView):
-#     context_object_name = 'ctx_meta1p_detail'
-#     models = models.Meta1P
-#     template_name = 'metas_app/meta1p_detail.html'
-#
-#     def get_queryset(self):
-#       return models.Meta1P.objects.order_by('id')
-#
-class Meta1PCreateView(CreateView):
-    fields = ('marca', 'cod_departamento', 'cod_subdepartamento', 'cod_segmento', 'cod_marca_propria',
-              'alcance_tv_shop', 'cod_dispositivo_origem', 'cod_unidade_negocio', 'dia',
-               'valor_calculado', 'valor_calc_alcance_shop', 'percentual_margem_orcada')
-    model = models.Meta1P
-    # template_name = 'metas_app/meta1p_create.html'
-#
-#
-# class Meta1PUpdateView(UpdateView):
-#     fields = ('marca', 'cod_departamento', 'cod_subdepartamento', 'cod_segmento', 'cod_marca_propria',
-#               'alcance_tv_shop', 'cod_dispositivo_origem', 'cod_unidade_negocio', 'dia',
-#                'valor_calculado', 'valor_calc_alcance_shop', 'percentual_margem_orcada')
-#     model = models.Meta1P
-#
-# class Meta1PDeleteView(DeleteView):
-#     model = models.Meta1P
-#     success_url = reverse_lazy("metas_app:list")
-#
 def meta1pUpload(request):
     try:
         context = {}
@@ -225,6 +194,72 @@ def meta1pUpload(request):
 
         return render(request, 'metas_app/meta1p_upload.html', context)
 
+########
+# CRUD #
+########
+from django_site.forms import Meta1pForm
+from .models import Meta1P
+
+def meta1pList(request):
+    context = {'ctx_meta1p_list': Meta1P.objects.all()}
+    return render(request, 'metas_app/meta1p_list.html', context)
+
+def meta1pForm(request):
+    if request.method == "GET":
+        form = Meta1pForm()
+        return render(request, 'metas_app/meta1p_form.html', {'form_1p':form})
+    else:
+        form = Meta1pForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('1p_list')
+        
+
+def meta1pDelete(request):
+    return
+
+##################################################################################################################
+##################################################################################################################
+# OLD
+#
+
+# class Meta1PListView(ListView):
+#     context_object_name = 'ctx_meta1p'
+#     model = models.Meta1P
+#     # template_name = 'metas_app/meta1p_list.html'
+#
+
+
+# class Meta1PCreateView(CreateView):
+#     fields = ('marca', 'cod_departamento', 'cod_subdepartamento', 'cod_segmento', 'cod_marca_propria',
+#               'alcance_tv_shop', 'cod_dispositivo_origem', 'cod_unidade_negocio', 'dia',
+#                'valor_calculado', 'valor_calc_alcance_shop', 'percentual_margem_orcada')
+#     model = models.Meta1P
+#     # template_name = 'metas_app/meta1p_create.html'
+
+# class Meta1PDetailView(DetailView):
+#     context_object_name = 'ctx_meta1p_detail'
+#     models = models.Meta1P
+#     template_name = 'metas_app/meta1p_detail.html'
+#
+#     def get_queryset(self):
+#       return models.Meta1P.objects.order_by('id')
+#
+# class Meta1PUpdateView(UpdateView):
+#     fields = ('marca', 'cod_departamento', 'cod_subdepartamento', 'cod_segmento', 'cod_marca_propria',
+#               'alcance_tv_shop', 'cod_dispositivo_origem', 'cod_unidade_negocio', 'dia',
+#                'valor_calculado', 'valor_calc_alcance_shop', 'percentual_margem_orcada')
+#     model = models.Meta1P
+#
+# class Meta1PDeleteView(DeleteView):
+#     model = models.Meta1P
+#     success_url = reverse_lazy("metas_app:list")
+#
+
+
+################################################################################################################################
+################################################################################################################################
+
 ################################################################
 ################################################################
 ###### 3P
@@ -234,35 +269,6 @@ class Meta3PListView(ListView):
     context_object_name = 'ctx_meta3p'
     model = models.Meta3P
     # template_name = 'metas_app/meta1p_list.html'
-
-# # class Meta3PDetailView(DetailView):
-# #     context_object_name = 'ctx_meta3p_detail'
-# #     models = models.Meta3P
-# #     template_name = 'forms_app/meta3p_detail.html'
-# #
-# #     def get_queryset(self):
-# #       return models.Meta3P.objects.order_by('id')
-# #
-class Meta3PCreateView(CreateView):
-    fields = ('marca', 'cod_departamento', 'departamento', 'cod_subdepartamento',
-             'ponto_venda', 'alcance_tv_shop', 'data', 'valor_calculado',
-             'valor_calc_alcance_shop', 'data_update', 'val_calc_mesmas_lojas',
-             'val_calc_alcance_mesmas_lojas_shop', 'val_calc_novas_lojas',
-             'val_calc_alcance_novas_lojas_shop')
-    model = models.Meta3P
-
-# # class Meta3PUpdateView(UpdateView):
-# #     fields = ('marca', 'cod_departamento', 'departamento', 'cod_subdepartamento',
-# #              'ponto_venda', 'alcance_tv_shop', 'data', 'valor_calculado',
-# #              'valor_calc_alcance_shop', 'data_update', 'val_calc_mesmas_lojas',
-# #              'val_calc_alcance_mesmas_lojas_shop', 'val_calc_novas_lojas',
-# #              'val_calc_alcance_novas_lojas_shop')
-# #     model = models.Meta3P
-# #
-# # class Meta3PDeleteView(DeleteView):
-# #     model = models.Meta3P
-# #     success_url = reverse_lazy("forms_app:list")
-
 
 def meta3pUpload(request):
     try:
@@ -406,3 +412,40 @@ def meta3pUpload(request):
         context['message'] = 'Check the file format and layout (header and data)'
 
         return render(request, 'metas_app/meta3p_upload.html', context)
+
+##################################################################################################################
+##################################################################################################################
+# OLD
+#
+#
+# class Meta3PCreateView(CreateView):
+#     fields = ('marca', 'cod_departamento', 'departamento', 'cod_subdepartamento',
+#              'ponto_venda', 'alcance_tv_shop', 'data', 'valor_calculado',
+#              'valor_calc_alcance_shop', 'data_update', 'val_calc_mesmas_lojas',
+#              'val_calc_alcance_mesmas_lojas_shop', 'val_calc_novas_lojas',
+#              'val_calc_alcance_novas_lojas_shop')
+#     model = models.Meta3P
+
+# # class Meta3PDetailView(DetailView):
+# #     context_object_name = 'ctx_meta3p_detail'
+# #     models = models.Meta3P
+# #     template_name = 'forms_app/meta3p_detail.html'
+# #
+# #     def get_queryset(self):
+# #       return models.Meta3P.objects.order_by('id')
+# #
+
+
+# # class Meta3PUpdateView(UpdateView):
+# #     fields = ('marca', 'cod_departamento', 'departamento', 'cod_subdepartamento',
+# #              'ponto_venda', 'alcance_tv_shop', 'data', 'valor_calculado',
+# #              'valor_calc_alcance_shop', 'data_update', 'val_calc_mesmas_lojas',
+# #              'val_calc_alcance_mesmas_lojas_shop', 'val_calc_novas_lojas',
+# #              'val_calc_alcance_novas_lojas_shop')
+# #     model = models.Meta3P
+# #
+# # class Meta3PDeleteView(DeleteView):
+# #     model = models.Meta3P
+# #     success_url = reverse_lazy("forms_app:list")
+
+
