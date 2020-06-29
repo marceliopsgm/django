@@ -30,12 +30,13 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 
-    # url(r'^1p_list/$', views.meta1pList.as_view(), name='1p_list'),
-    url(r'^1p_list/$', views.meta1pList, name='1p_list'),
-    url(r'^1p_form/$', views.meta1pForm, name='1p_form'),
-    url(r'^1p_upload/$', views.meta1pUpload, name='1p_upload'),
-    # url(r'^1p_create/$', views.Meta1PCreateView.as_view(), name='1p_create'),
+    url(r'^1p_form/$', views.meta1pForm, name='1p_form'), # Insert
+    path(r'1p_form/<int:id>/', views.meta1pForm, name='1p_form_update'), # Update
+    path(r'1p_form/delete/<int:id>/', views.meta1pDelete, name='1p_form_delete'), # Delete
+    url(r'^1p_list/$', views.meta1pList, name='1p_list'), # List
+    url(r'^1p_upload/$', views.meta1pUpload, name='1p_upload'), # CSV Upload
 
+    # OLD
     # url(r'^3p_list/$', views.Meta3PListView.as_view(), name='3p_list'),
     # url(r'^3p_upload/$', views.meta3pUpload, name='3p_upload'),
     # url(r'^3p_create/$', views.Meta3PCreateView.as_view(), name='3p_create'),

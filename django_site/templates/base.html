@@ -23,8 +23,6 @@
           }
       </style>
 
-      <script>
-      </script>
   </head>
 
   <body>
@@ -37,9 +35,6 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-<!--              <li class="nav-item">-->
-<!--                <a class="nav-link" href="{% url 'home' %}">Home</a>-->
-<!--              </li>-->
                 {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url '1p_list' %}">1P</a>
@@ -78,7 +73,7 @@
               {% else %}
                 <form class="form-inline my-2 my-lg-0">
 <!--                <a href="{% url 'signup' %}">Sign up</a>-->
-                    <a href="{% url 'login' %}" class="btn btn-primary">Log in</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-primary">Log in</a>
                 </form>
               {% endif %}
           </div>

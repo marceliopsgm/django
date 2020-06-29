@@ -204,19 +204,49 @@ def meta1pList(request):
     context = {'ctx_meta1p_list': Meta1P.objects.all()}
     return render(request, 'metas_app/meta1p_list.html', context)
 
-def meta1pForm(request):
+# BKP
+# def meta1pForm(request, id=0):
+#     if request.method == "GET":
+#         if id == 0:
+#             form = Meta1pForm()
+#         else:
+#             meta1p = Meta1P.objects.get(pk=id)
+#             form = Meta1pForm(instance=meta1p)
+#         return render(request, 'metas_app/meta1p_form.html', {'form_1p':form})
+#     else:
+#         if id == 0:
+#             form = Meta1pForm(request.POST)
+#         else:
+#             meta1p = Meta1P.objects.get(pk=id)
+#             form = Meta1pForm(request.POST, instance=meta1p)
+#
+#         if form.is_valid():
+#             form.save()
+#         return redirect('1p_list')
+
+def meta1pForm(request, id=0):
     if request.method == "GET":
-        form = Meta1pForm()
+        if id == 0:
+            form = Meta1pForm()
+        else:
+            meta1p = Meta1P.objects.get(pk=id)
+            form = Meta1pForm(instance=meta1p)
         return render(request, 'metas_app/meta1p_form.html', {'form_1p':form})
     else:
-        form = Meta1pForm(request.POST)
+        if id == 0:
+            form = Meta1pForm(request.POST)
+        else:
+            meta1p = Meta1P.objects.get(pk=id)
+            form = Meta1pForm(request.POST, instance=meta1p)
+
         if form.is_valid():
             form.save()
         return redirect('1p_list')
-        
 
-def meta1pDelete(request):
-    return
+def meta1pDelete(request, id):
+    meta1p = Meta1P.objects.get(pk=id)
+    meta1p.delete()
+    return redirect('1p_list')
 
 ##################################################################################################################
 ##################################################################################################################
