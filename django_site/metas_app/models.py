@@ -22,8 +22,8 @@ class Meta1P(models.Model):
 
     percentual_margem_orcada = models.DecimalField(decimal_places=2, max_digits=5)
 
-    def __str__(self):
-        return f"""{self.dia} - {self.marca} - {round(self.valor_calculado, 2)} - {self.percentual_margem_orcada}%"""
+    # def __str__(self):
+    #     return f"""{self.dia} - {self.marca} - {round(self.valor_calculado, 2)} - {self.percentual_margem_orcada}%"""
 
     def get_absolute_url(self):
         return reverse("metas_app:1p_list")
@@ -55,8 +55,8 @@ class Meta3P(models.Model):
     #Shoptime
     val_calc_alcance_novas_lojas_shop = models.DecimalField(decimal_places=2, max_digits=30, null=True, blank=True)
 
-    def __str__(self):
-        return f"""{self.data} - {self.marca}%"""
+    # def __str__(self):
+    #     return f"""{self.data} - {self.marca}%"""
 
     def get_absolute_url(self):
         return reverse("metas_app:3p_list")

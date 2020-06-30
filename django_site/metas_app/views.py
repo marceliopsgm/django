@@ -19,7 +19,7 @@ def home(request):
     return render(request, 'home.html')
 
 ################################################################
-###### Authentication
+# Authentication
 ################################################################
 
 def signup(request):
@@ -36,8 +36,43 @@ def signup(request):
 
 
 ################################################################
-###### 1P
+# 1P
 ################################################################
+
+# CRUD
+
+from django_site.forms import Meta1pForm
+from .models import Meta1P
+
+def meta1pList(request):
+    context = {'ctx_meta1p_list': Meta1P.objects.all()}
+    return render(request, 'metas_app/meta1p_list.html', context)
+
+def meta1pForm(request, id=0):
+    if request.method == "GET":
+        if id == 0:
+            form = Meta1pForm()
+        else:
+            meta1p = Meta1P.objects.get(pk=id)
+            form = Meta1pForm(instance=meta1p)
+        return render(request, 'metas_app/meta1p_form.html', {'form_1p':form})
+    else:
+        if id == 0:
+            form = Meta1pForm(request.POST)
+        else:
+            meta1p = Meta1P.objects.get(pk=id)
+            form = Meta1pForm(request.POST, instance=meta1p)
+
+        if form.is_valid():
+            form.save()
+        return redirect('1p_list')
+
+def meta1pDelete(request, id):
+    meta1p = Meta1P.objects.get(pk=id)
+    meta1p.delete()
+    return redirect('1p_list')
+
+# Upload CSV
 def meta1pUpload(request):
     try:
         context = {}
@@ -170,136 +205,69 @@ def meta1pUpload(request):
                     ##############
                     if len(lst_filled_valid) == 0:
                         if len(lst_type_valid) == 0:
-                            context['status'] = 'File uploaded successfully: {}'.format(fs.url(uploaded_file.name).replace('/media/',''))
+                            context['status'] = 'Arquivo atualizado com sucesso: {}'.format(fs.url(uploaded_file.name).replace('/media/',''))
                             # context['arquivo'] = format(df.iloc[0:10])
                         else:
                             fs.delete(tmp_save_file)
-                            context['status'] = 'Fields with different formats: {}'.format(lst_type_valid)
-                            context['message'] = 'Please correct and try again'
+                            context['status'] = 'Campos com formatos diferentes: {}'.format(lst_type_valid)
+                            context['message'] = 'Por favor, corrija e tente novamente'
                     else:
                         fs.delete(tmp_save_file)
-                        context['status'] = 'The following fields are mandatory: {}'.format(lst_filled_valid)
-                        context['message'] = 'Please correct and try again'
+                        context['status'] = 'Os campos a seguir são obrigatórios: {}'.format(lst_filled_valid)
+                        context['message'] = 'Por favor, corrija e tente novamente'
 
             else:
-                context['status'] = 'Invalid file'
-                context['message'] = 'Please submit a valid CSV file'
-                context['expected'] = 'Expected: {}'.format(lst_expected)
+                context['status'] = 'Arquivo inválido'
+                context['message'] = 'Por favor, submeta um arquivo .csv válido'
+                context['expected'] = 'Layout esperado: {}'.format(lst_expected)
 
         return render(request, 'metas_app/meta1p_upload.html', context)
 
     except:
-        context['status'] = 'Error error trying to read the file'
-        context['message'] = 'Check the file format and layout (header and data)'
+        context['status'] = 'Erro tentando ler o arquivo'
+        context['message'] = 'Por favor, verifique o formato e o layout do arquivo (cabeçalho e dados)'
 
         return render(request, 'metas_app/meta1p_upload.html', context)
 
-########
-# CRUD #
-########
-from django_site.forms import Meta1pForm
-from .models import Meta1P
 
-def meta1pList(request):
-    context = {'ctx_meta1p_list': Meta1P.objects.all()}
-    return render(request, 'metas_app/meta1p_list.html', context)
+################################################################
+# 3P
+################################################################
 
-# BKP
-# def meta1pForm(request, id=0):
-#     if request.method == "GET":
-#         if id == 0:
-#             form = Meta1pForm()
-#         else:
-#             meta1p = Meta1P.objects.get(pk=id)
-#             form = Meta1pForm(instance=meta1p)
-#         return render(request, 'metas_app/meta1p_form.html', {'form_1p':form})
-#     else:
-#         if id == 0:
-#             form = Meta1pForm(request.POST)
-#         else:
-#             meta1p = Meta1P.objects.get(pk=id)
-#             form = Meta1pForm(request.POST, instance=meta1p)
-#
-#         if form.is_valid():
-#             form.save()
-#         return redirect('1p_list')
+# CRUD
 
-def meta1pForm(request, id=0):
+from django_site.forms import Meta3pForm
+from .models import Meta3P
+
+def meta3pList(request):
+    context = {'ctx_meta3p_list': Meta3P.objects.all()}
+    return render(request, 'metas_app/meta3p_list.html', context)
+
+def meta3pForm(request, id=0):
     if request.method == "GET":
         if id == 0:
-            form = Meta1pForm()
+            form = Meta3pForm()
         else:
-            meta1p = Meta1P.objects.get(pk=id)
-            form = Meta1pForm(instance=meta1p)
-        return render(request, 'metas_app/meta1p_form.html', {'form_1p':form})
+            meta3p = Meta3P.objects.get(pk=id)
+            form = Meta3pForm(instance=meta3p)
+        return render(request, 'metas_app/meta3p_form.html', {'form_3p':form})
     else:
         if id == 0:
-            form = Meta1pForm(request.POST)
+            form = Meta3pForm(request.POST)
         else:
-            meta1p = Meta1P.objects.get(pk=id)
-            form = Meta1pForm(request.POST, instance=meta1p)
+            meta3p = Meta3P.objects.get(pk=id)
+            form = Meta3pForm(request.POST, instance=meta3p)
 
         if form.is_valid():
             form.save()
-        return redirect('1p_list')
+        return redirect('3p_list')
 
-def meta1pDelete(request, id):
-    meta1p = Meta1P.objects.get(pk=id)
-    meta1p.delete()
-    return redirect('1p_list')
+def meta3pDelete(request, id):
+    meta3p = Meta3P.objects.get(pk=id)
+    meta3p.delete()
+    return redirect('3p_list')
 
-##################################################################################################################
-##################################################################################################################
-# OLD
-#
-
-# class Meta1PListView(ListView):
-#     context_object_name = 'ctx_meta1p'
-#     model = models.Meta1P
-#     # template_name = 'metas_app/meta1p_list.html'
-#
-
-
-# class Meta1PCreateView(CreateView):
-#     fields = ('marca', 'cod_departamento', 'cod_subdepartamento', 'cod_segmento', 'cod_marca_propria',
-#               'alcance_tv_shop', 'cod_dispositivo_origem', 'cod_unidade_negocio', 'dia',
-#                'valor_calculado', 'valor_calc_alcance_shop', 'percentual_margem_orcada')
-#     model = models.Meta1P
-#     # template_name = 'metas_app/meta1p_create.html'
-
-# class Meta1PDetailView(DetailView):
-#     context_object_name = 'ctx_meta1p_detail'
-#     models = models.Meta1P
-#     template_name = 'metas_app/meta1p_detail.html'
-#
-#     def get_queryset(self):
-#       return models.Meta1P.objects.order_by('id')
-#
-# class Meta1PUpdateView(UpdateView):
-#     fields = ('marca', 'cod_departamento', 'cod_subdepartamento', 'cod_segmento', 'cod_marca_propria',
-#               'alcance_tv_shop', 'cod_dispositivo_origem', 'cod_unidade_negocio', 'dia',
-#                'valor_calculado', 'valor_calc_alcance_shop', 'percentual_margem_orcada')
-#     model = models.Meta1P
-#
-# class Meta1PDeleteView(DeleteView):
-#     model = models.Meta1P
-#     success_url = reverse_lazy("metas_app:list")
-#
-
-
-################################################################################################################################
-################################################################################################################################
-
-################################################################
-################################################################
-###### 3P
-################################################################
-
-class Meta3PListView(ListView):
-    context_object_name = 'ctx_meta3p'
-    model = models.Meta3P
-    # template_name = 'metas_app/meta1p_list.html'
-
+# Upload CSV
 def meta3pUpload(request):
     try:
         context = {}
@@ -419,63 +387,26 @@ def meta3pUpload(request):
                     ##############
                     if len(lst_filled_valid) == 0:
                         if len(lst_type_valid) == 0:
-                            context['status'] = 'File uploaded successfully: {}'.format(fs.url(uploaded_file.name).replace('/media/',''))
+                            context['status'] = 'Arquivo atualizado com sucesso: {}'.format(fs.url(uploaded_file.name).replace('/media/',''))
                             # context['arquivo'] = format(df.iloc[0:10])
                         else:
                             fs.delete(tmp_save_file)
-                            context['status'] = 'Fields with different formats: {}'.format(lst_type_valid)
-                            context['message'] = 'Please correct and try again'
+                            context['status'] = 'Campos com formatos diferentes: {}'.format(lst_type_valid)
+                            context['message'] = 'Por favor, corrija e tente novamente'
                     else:
                         fs.delete(tmp_save_file)
-                        context['status'] = 'The following fields are mandatory: {}'.format(lst_filled_valid)
-                        context['message'] = 'Please correct and try again'
+                        context['status'] = 'Os campos a seguir são obrigatórios: {}'.format(lst_filled_valid)
+                        context['message'] = 'Por favor, corrija e tente novamente'
 
             else:
-                context['status'] = 'Invalid file'
-                context['message'] = 'Please submit a valid CSV file'
-                context['expected'] = 'Expected: {}'.format(lst_expected)
+                context['status'] = 'Arquivo inválido'
+                context['message'] = 'Por favor, submeta um arquivo .csv válido'
+                context['expected'] = 'Layout esperado: {}'.format(lst_expected)
 
         return render(request, 'metas_app/meta3p_upload.html', context)
 
     except:
-        context['status'] = 'Error error trying to read the file'
-        context['message'] = 'Check the file format and layout (header and data)'
+        context['status'] = 'Erro tentando ler o arquivo'
+        context['message'] = 'Por favor, verifique o formato e o layout do arquivo (cabeçalho e dados)'
 
         return render(request, 'metas_app/meta3p_upload.html', context)
-
-##################################################################################################################
-##################################################################################################################
-# OLD
-#
-#
-# class Meta3PCreateView(CreateView):
-#     fields = ('marca', 'cod_departamento', 'departamento', 'cod_subdepartamento',
-#              'ponto_venda', 'alcance_tv_shop', 'data', 'valor_calculado',
-#              'valor_calc_alcance_shop', 'data_update', 'val_calc_mesmas_lojas',
-#              'val_calc_alcance_mesmas_lojas_shop', 'val_calc_novas_lojas',
-#              'val_calc_alcance_novas_lojas_shop')
-#     model = models.Meta3P
-
-# # class Meta3PDetailView(DetailView):
-# #     context_object_name = 'ctx_meta3p_detail'
-# #     models = models.Meta3P
-# #     template_name = 'forms_app/meta3p_detail.html'
-# #
-# #     def get_queryset(self):
-# #       return models.Meta3P.objects.order_by('id')
-# #
-
-
-# # class Meta3PUpdateView(UpdateView):
-# #     fields = ('marca', 'cod_departamento', 'departamento', 'cod_subdepartamento',
-# #              'ponto_venda', 'alcance_tv_shop', 'data', 'valor_calculado',
-# #              'valor_calc_alcance_shop', 'data_update', 'val_calc_mesmas_lojas',
-# #              'val_calc_alcance_mesmas_lojas_shop', 'val_calc_novas_lojas',
-# #              'val_calc_alcance_novas_lojas_shop')
-# #     model = models.Meta3P
-# #
-# # class Meta3PDeleteView(DeleteView):
-# #     model = models.Meta3P
-# #     success_url = reverse_lazy("forms_app:list")
-
-

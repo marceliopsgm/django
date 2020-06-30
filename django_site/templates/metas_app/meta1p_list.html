@@ -4,58 +4,59 @@
     <div class="card border-secondary mb-3">
       <div class="card-header"><h1>Metas 1P</h1></div>
       <div class="card-body text-secondary">
-        <p class="card-text">Brands: Americanas.com, Submarino and Sou Barato.</p>
+        <p class="card-text">Americanas.com, Submarino e Sou Barato.</p>
           <hr class="my-4">
          <a class="btn btn-link" href="{% url '1p_upload' %}">Upload files</a>
          <a class="btn btn-link" href="{% url '1p_form' %}">Register Forms</a>
       </div>
     </div>
-    <div class="container">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Marca</th>
-          <th scope="col">Cód. Depto.</th>
-          <th scope="col">Cód Sub. Depto.</th>
-          <th scope="col">Cód. Segmento</th>
-          <th scope="col">Cód. Marca Própria</th>
-          <th scope="col">Alcance TV Shop</th>
-          <th scope="col">Disp. Origem</th>
-          <th scope="col">Unid. Negócio</th>
-          <th scope="col">Dia</th>
-          <th scope="col">Valor Calculado</th>
-          <th scope="col">Valor Calc. Alcance Shop</th>
-          <th scope="col">% Meta Orçada</th>
-        </tr>
-      </thead>
 
-    <tbody>
-      {% for meta in ctx_meta1p_list %}
-      <tr>
-        <td>{{meta.pk}}</td>
-        <td>{{meta.marca}}</td>
-        <td>{{meta.cod_departamento}}</td>
-        <td>{{meta.cod_subdepartamento}}</td>
-        <td>{{meta.cod_segmento}}</td>
-        <td>{{meta.cod_marca_propria}}</td>
-        <td>{{meta.alcance_tv_shop}}</td>
-        <td>{{meta.cod_dispositivo_origem}}</td>
-        <td>{{meta.cod_unidade_negocio}}</td>
-        <td>{{meta.dia}}</td>
-        <td>{{meta.valor_calculado}}</td>
-        <td>{{meta.valor_calc_alcance_shop}}</td>
-        <td>{{meta.percentual_margem_orcada}}</td>
-        <td><a href="{% url '1p_form_update' meta.pk %}" class="btn btn-outline-primary" role="button">Edit</a></td>
-        <td>
-            <form action="{% url '1p_form_delete' meta.pk %}" method="post" class="">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-outline-danger">Delete</button>
-            </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-    </table>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Cód. Depto.</th>
+                  <th scope="col">Cód Sub. Depto.</th>
+                  <th scope="col">Cód. Segmento</th>
+                  <th scope="col">Cód. Marca Própria</th>
+                  <th scope="col">Alcance TV Shop</th>
+                  <th scope="col">Disp. Origem</th>
+                  <th scope="col">Unid. Negócio</th>
+                  <th scope="col">Dia</th>
+                  <th scope="col">Valor Calculado</th>
+                  <th scope="col">Valor Calc. Alcance Shop</th>
+                  <th scope="col">% Meta Orçada</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for meta in ctx_meta1p_list %}
+                    <tr>
+                        <td>{{meta.pk}}</td>
+                        <td>{{meta.marca}}</td>
+                        <td>{{meta.cod_departamento}}</td>
+                        <td>{{meta.cod_subdepartamento}}</td>
+                        <td>{{meta.cod_segmento}}</td>
+                        <td>{{meta.cod_marca_propria}}</td>
+                        <td>{{meta.alcance_tv_shop}}</td>
+                        <td>{{meta.cod_dispositivo_origem}}</td>
+                        <td>{{meta.cod_unidade_negocio}}</td>
+                        <td>{{meta.dia}}</td>
+                        <td>{{meta.valor_calculado}}</td>
+                        <td>{{meta.valor_calc_alcance_shop}}</td>
+                        <td>{{meta.percentual_margem_orcada}}</td>
+                        <td><a href="{% url '1p_form_update' meta.pk %}" class="btn btn-outline-primary" role="button">Edit</a></td>
+                        <td>
+                            <form action="{% url '1p_form_delete' meta.pk %}" method="post" class="">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}
