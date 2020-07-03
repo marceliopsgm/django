@@ -5,7 +5,8 @@
 <div class="card border-secondary mb-3">
   <div class="card-header"><h1>Metas 3P</h1></div>
   <div class="card-body text-secondary">
-    <p class="card-text">Brands: Americanas.com, Submarino, Shoptime and Sou Barato.</p>
+        <p class="card-text">Metas referentes as marcas Americanas.com, Submarino, Shoptime e Sou Barato</p>
+        <p class="card-text">* Os campos com o final Shoptime, são aplicáveis apenas para uma meta Shoptime</p>
       <hr class="my-4">
   </div>
 
@@ -13,7 +14,7 @@
     <form action="" method="post" autocomplete="on">
         {% csrf_token %}
         {{form_3p|crispy}}
-        <button type="submit" class="btn btn-outline-primary">Submit</button>
+        <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
         </p>
     </form>
   </div>

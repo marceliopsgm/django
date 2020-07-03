@@ -4,10 +4,10 @@
     <div class="card border-secondary mb-3">
       <div class="card-header"><h1>Metas 1P</h1></div>
       <div class="card-body text-secondary">
-        <p class="card-text">Americanas.com, Submarino e Sou Barato.</p>
+        <p class="card-text">Metas referentes as marcas Americanas.com, Submarino e Sou Barato</p>
           <hr class="my-4">
-         <a class="btn btn-link" href="{% url '1p_upload' %}">Upload files</a>
-         <a class="btn btn-link" href="{% url '1p_form' %}">Register Forms</a>
+         <a class="btn btn-link" href="{% url '1p_upload' %}">Upload de arquivo</a>
+         <a class="btn btn-link" href="{% url '1p_form' %}">Registrar meta</a>
       </div>
     </div>
 
@@ -31,6 +31,7 @@
                 </tr>
             </thead>
 
+            <div class="container">
             <tbody>
                 {% for meta in ctx_meta1p_list %}
                     <tr>
@@ -47,11 +48,11 @@
                         <td>{{meta.valor_calculado}}</td>
                         <td>{{meta.valor_calc_alcance_shop}}</td>
                         <td>{{meta.percentual_margem_orcada}}</td>
-                        <td><a href="{% url '1p_form_update' meta.pk %}" class="btn btn-outline-primary" role="button">Edit</a></td>
+                        <td><a href="{% url '1p_form_update' meta.pk %}" class="btn btn-outline-primary" role="button">Editar</a></td>
                         <td>
                             <form action="{% url '1p_form_delete' meta.pk %}" method="post" class="">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                <button type="submit" class="btn btn-outline-danger">Deletar</button>
                             </form>
                         </td>
                     </tr>

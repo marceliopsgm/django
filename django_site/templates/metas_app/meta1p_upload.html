@@ -16,14 +16,17 @@
     <div class="card border-secondary mb-3">
       <div class="card-header"><h1>Upload 1P</h1></div>
       <div class="card-body text-secondary">
-        <h5 class="card-title">Upload your CSV File</h5>
+        <h5 class="card-title">Baixar modelo de arquivo</h5>
+          <a href="/media/modelos/modelo_1p.csv" download>
+            <button type="button" class="btn btn-outline-primary" >Baixar</button>
+          </a>
           <hr class="my-4">
-        <p class="card-text">Brands: Americanas.com, Submarino and Sou Barato</p>
+        <p class="card-text">Selecione o arquivo de metas 1P para upload</p>
 
           <form name="myForm" action="." onsubmit="return validateForm()" method="post" required enctype="multipart/form-data">
             {% csrf_token %}
             <input type="file" class="file-path validate" name="1p_csv_file" accept=".csv">
-            <button type="submit" class="btn btn-outline-primary" >Upload file</button>
+            <button type="submit" class="btn btn-outline-primary" >Submeter</button>
         </form>
       </div>
     </div>
