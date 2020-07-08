@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfac6b56-7e4b-4f52-9796-b566e7f6b27a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/django_site/test/postgres.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/modelos/modelo_1p.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/modelos/modelo_3p.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/modelos/modelo_metas_1p.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/modelos/modelo_metas_3p.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/metas_app/meta1p_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/metas_app/meta1p_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/metas_app/meta1p_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/metas_app/meta1p_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_site/metas_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/metas_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_site/templates/metas_app/meta1p_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/metas_app/meta1p_upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/metas_app/meta3p_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/metas_app/meta3p_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/metas_app/meta3p_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/metas_app/meta3p_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_site/templates/metas_app/meta3p_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/metas_app/meta3p_upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/registration/password_change_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/registration/password_change_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_site/templates/registration/password_change_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/templates/registration/password_change_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_site/test/postgres.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_site/test/postgres.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/modelos/modelo_1p.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/modelos/modelo_3p.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +40,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/media/modelos" />
-      <recent name="$PROJECT_DIR$/media" />
-      <recent name="$PROJECT_DIR$/django_site/templates/metas_app" />
-      <recent name="$PROJECT_DIR$/django_site/metas_app" />
-      <recent name="$PROJECT_DIR$/django_site" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/media/modelos" />
       <recent name="$PROJECT_DIR$/media" />
       <recent name="$PROJECT_DIR$/django_site/templates/metas_app" />
       <recent name="$PROJECT_DIR$/bigdata_django_proj/forms_app/templates/forms_app" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media/modelos" />
+      <recent name="$PROJECT_DIR$/media" />
+      <recent name="$PROJECT_DIR$/django_site/templates/metas_app" />
+      <recent name="$PROJECT_DIR$/django_site/metas_app" />
+      <recent name="$PROJECT_DIR$/django_site" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,30 +97,38 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="875" height="904" key="GridCell.Tab.0.bottom" timestamp="1593797487444">
-      <screen x="45" y="27" width="3795" height="1053" />
+    <state width="1034" height="812" key="GridCell.Tab.0.bottom" timestamp="1594060918495">
+      <screen x="45" y="27" width="1875" height="1053" />
     </state>
     <state width="929" height="877" key="GridCell.Tab.0.bottom/0.27.3840.1053@0.27.3840.1053" timestamp="1593794761549" />
+    <state width="1034" height="812" key="GridCell.Tab.0.bottom/45.27.1875.1053/1920.0.1080.1920@1920.0.1080.1920" timestamp="1594057562959" />
+    <state width="1034" height="812" key="GridCell.Tab.0.bottom/45.27.1875.1053/1920.0.1080.1920@45.27.1875.1053" timestamp="1594060918495" />
     <state width="758" height="383" key="GridCell.Tab.0.bottom/45.27.1875.1053@45.27.1875.1053" timestamp="1593792292420" />
-    <state width="875" height="904" key="GridCell.Tab.0.bottom/45.27.3795.1053@45.27.3795.1053" timestamp="1593797487444" />
-    <state width="875" height="904" key="GridCell.Tab.0.center" timestamp="1593797487444">
-      <screen x="45" y="27" width="3795" height="1053" />
+    <state width="875" height="350" key="GridCell.Tab.0.bottom/45.27.3795.1053@45.27.3795.1053" timestamp="1593799577782" />
+    <state width="1034" height="812" key="GridCell.Tab.0.center" timestamp="1594060918495">
+      <screen x="45" y="27" width="1875" height="1053" />
     </state>
     <state width="929" height="877" key="GridCell.Tab.0.center/0.27.3840.1053@0.27.3840.1053" timestamp="1593794761548" />
+    <state width="1034" height="812" key="GridCell.Tab.0.center/45.27.1875.1053/1920.0.1080.1920@1920.0.1080.1920" timestamp="1594057562959" />
+    <state width="1034" height="812" key="GridCell.Tab.0.center/45.27.1875.1053/1920.0.1080.1920@45.27.1875.1053" timestamp="1594060918495" />
     <state width="758" height="383" key="GridCell.Tab.0.center/45.27.1875.1053@45.27.1875.1053" timestamp="1593792292419" />
-    <state width="875" height="904" key="GridCell.Tab.0.center/45.27.3795.1053@45.27.3795.1053" timestamp="1593797487444" />
-    <state width="875" height="904" key="GridCell.Tab.0.left" timestamp="1593797487444">
-      <screen x="45" y="27" width="3795" height="1053" />
+    <state width="875" height="350" key="GridCell.Tab.0.center/45.27.3795.1053@45.27.3795.1053" timestamp="1593799577782" />
+    <state width="1034" height="812" key="GridCell.Tab.0.left" timestamp="1594060918495">
+      <screen x="45" y="27" width="1875" height="1053" />
     </state>
     <state width="929" height="877" key="GridCell.Tab.0.left/0.27.3840.1053@0.27.3840.1053" timestamp="1593794761548" />
+    <state width="1034" height="812" key="GridCell.Tab.0.left/45.27.1875.1053/1920.0.1080.1920@1920.0.1080.1920" timestamp="1594057562959" />
+    <state width="1034" height="812" key="GridCell.Tab.0.left/45.27.1875.1053/1920.0.1080.1920@45.27.1875.1053" timestamp="1594060918495" />
     <state width="758" height="383" key="GridCell.Tab.0.left/45.27.1875.1053@45.27.1875.1053" timestamp="1593792292419" />
-    <state width="875" height="904" key="GridCell.Tab.0.left/45.27.3795.1053@45.27.3795.1053" timestamp="1593797487444" />
-    <state width="875" height="904" key="GridCell.Tab.0.right" timestamp="1593797487444">
-      <screen x="45" y="27" width="3795" height="1053" />
+    <state width="875" height="350" key="GridCell.Tab.0.left/45.27.3795.1053@45.27.3795.1053" timestamp="1593799577781" />
+    <state width="1034" height="812" key="GridCell.Tab.0.right" timestamp="1594060918495">
+      <screen x="45" y="27" width="1875" height="1053" />
     </state>
     <state width="929" height="877" key="GridCell.Tab.0.right/0.27.3840.1053@0.27.3840.1053" timestamp="1593794761549" />
+    <state width="1034" height="812" key="GridCell.Tab.0.right/45.27.1875.1053/1920.0.1080.1920@1920.0.1080.1920" timestamp="1594057562959" />
+    <state width="1034" height="812" key="GridCell.Tab.0.right/45.27.1875.1053/1920.0.1080.1920@45.27.1875.1053" timestamp="1594060918495" />
     <state width="758" height="383" key="GridCell.Tab.0.right/45.27.1875.1053@45.27.1875.1053" timestamp="1593792292419" />
-    <state width="875" height="904" key="GridCell.Tab.0.right/45.27.3795.1053@45.27.3795.1053" timestamp="1593797487444" />
+    <state width="875" height="350" key="GridCell.Tab.0.right/45.27.3795.1053@45.27.3795.1053" timestamp="1593799577782" />
     <state x="471" y="187" key="SettingsEditor" timestamp="1593692429241">
       <screen x="45" y="27" width="1875" height="1053" />
     </state>

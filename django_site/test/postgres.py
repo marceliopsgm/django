@@ -27,7 +27,7 @@ engine = create_engine('postgresql://django:B2wBigD@taPG@localhost:5432/djangodb
 df_1p = pd.read_csv("/home/marcelio/Tmp/django/modelo_1p.csv")
 print(df_1p.head())
 df_1p.to_sql(
-    name = 'metas_app_meta1p',
+    name = 'metas_app_meta1p_teste',
     con=engine,
     index=False,
     if_exists='append'
@@ -37,7 +37,7 @@ df_1p.to_sql(
 df_3p = pd.read_csv("/home/marcelio/Tmp/django/modelo_3p.csv")
 print(df_3p.head())
 df_3p.to_sql(
-    name = 'metas_app_meta3p',
+    name = 'metas_app_meta3p_teste',
     con=engine,
     index=False,
     if_exists='append'

@@ -14,6 +14,8 @@ from django.urls import reverse_lazy
 
 from django.core.files.storage import FileSystemStorage
 import pandas as pd
+from sqlalchemy import create_engine
+engine = create_engine('postgresql://django:B2wBigD@taPG@localhost:5432/djangodb')
 
 def home(request):
     return render(request, 'home.html')
@@ -207,6 +209,13 @@ def meta1pUpload(request):
                         if len(lst_type_valid) == 0:
                             context['status'] = 'Arquivo atualizado com sucesso: {}'.format(fs.url(uploaded_file.name).replace('/media/',''))
                             # context['arquivo'] = format(df.iloc[0:10])
+                            df.to_sql(
+                                name='metas_app_meta1p',
+                                con=engine,
+                                index=False,
+                                if_exists='append'
+                            )
+
                         else:
                             fs.delete(tmp_save_file)
                             context['status'] = 'Campos com formatos diferentes: {}'.format(lst_type_valid)
@@ -389,6 +398,13 @@ def meta3pUpload(request):
                         if len(lst_type_valid) == 0:
                             context['status'] = 'Arquivo atualizado com sucesso: {}'.format(fs.url(uploaded_file.name).replace('/media/',''))
                             # context['arquivo'] = format(df.iloc[0:10])
+                            df.to_sql(
+                                name='metas_app_meta3p',
+                                con=engine,
+                                index=False,
+                                if_exists='append'
+                            )
+
                         else:
                             fs.delete(tmp_save_file)
                             context['status'] = 'Campos com formatos diferentes: {}'.format(lst_type_valid)

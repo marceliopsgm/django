@@ -1,0 +1,3 @@
+marca,cod_departamento,departamento,cod_subdepartamento,ponto_venda,alcance_tv_shop,data,valor_calculado,valor_calc_alcance_shop,data_update,val_calc_mesmas_lojas,val_calc_alcance_mesmas_lojas_shop,val_calc_novas_lojas,val_calc_alcance_novas_lojas_shop
+REGISTRO DE EXEMPLO (DELETAR),18,TELEFONIA (18),-1,INTERNET,,01/05/2020,20.98 ,,01/05/2020,19.01,,10.05,
+SEGUIR O MESMO FORMATO DE CAMPOS,,,,,,,,,,,,,
